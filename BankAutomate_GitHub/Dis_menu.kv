@@ -1,0 +1,158 @@
+GridLayout:
+    canvas:
+        Rectangle:
+            source:"img/back_img2.jpg"
+            size:root.width,root.height
+
+
+    BoxLayout:
+        orientation:'vertical'
+        cols:1
+        width:root.width
+        height:200
+        size:(80,80)
+        pos:0,root.height/1.2
+        Image:
+            source:"img/menu_logo.png"
+
+    BoxLayout:
+        orientation:'vertical'
+        cols:1
+        width:root.width
+        height:200
+        pos:0,root.height/1.5
+        Label:
+            text:"[b][color=fff]MATT-Banking(demo)[/color][/b]"
+            haling:"center"
+            markup:True
+            font_size:32
+            size_hint:(1,1)
+    BoxLayout:
+        orientation:'vertical'
+        cols:1
+        width:root.width
+        height:200
+        pos:0,root.height/2.1
+
+        Label:
+            text:"[b]Name[/b]"
+            markup:True
+            haling:"center"
+            size_hint:(1,1)
+        TextInput:
+            id:nameId
+            size_hint:(1,2)
+            background_color:[1,1,1,.5]
+        Label:
+            text:"[b]E-Mail[/b]"
+            markup:True
+            haling:"center"
+            size_hint:(1,1)
+        TextInput:
+            id:emailId
+            size_hint:(1,2)
+            background_color:[1,1,1,.5]
+        Label:
+            text:"[b]Passwort[/b]"
+            markup:True
+            haling:"center"
+            size_hint:(1,1)
+        TextInput:
+            id:passId
+
+            size_hint:(1,2)
+            password:True
+            background_color:[1,1,1,.5]
+        Button:
+            text:"[b]Send[/b]"
+            markup:True
+            background_color: [0, 0, 1, 1]
+            size_hint:(1,2)
+            on_press:
+                app.entryInfo(nameId.text,emailId.text,passId.text)
+
+    BoxLayout:
+        orientation:"horizontal"
+        width:160
+        height:40
+        cols:1
+        width:root.width/2
+        pos:root.width/4,root.height/2.4
+        Button:
+            text:"[b]Password[/b]"
+            markup:True
+            background_color:[0,0,0,0]
+            on_press:app.popup('passwordVergess')
+
+
+        Button:
+            text:"[b]Register[/b]"
+            markup:True
+            background_color:[0,0,0,0]
+
+
+
+
+    BoxLayout:
+        cols:4
+        width:root.width
+        height:40
+        pos:0,root.height/3.2
+        Button:
+            text:"[b]konto[/b]"
+            markup:True
+            font_size:18
+            background_color:[0, 1, 1,.8]
+            on_press: app.popup('konto')
+        Button:
+            text:"[b]ein[/b]"
+            markup:True
+            font_size:18
+            background_color:[0, 1, 1,.8]
+            on_press: app.popup('einzahl')
+        Button:
+            text:"[b]aus[/b]"
+            markup:True
+            font_size:18
+            background_color:[0, 1, 1,.8]
+            on_press: app.popup('auszahl')
+        Button:
+            text:"[b]diagram[/b]"
+            markup:True
+            font_size:18
+            background_color:[0, 1, 1,.8]
+            on_press:
+                app.diagramKonto()
+
+    BoxLayout:
+        orientation:"horizontal"
+        height:40
+        cols:1
+        width:root.width/2
+        pos:root.width/4,root.height/8
+        BoxLayout:
+            Label:
+                text:"you want Sing Up?"
+                font_size:14
+            Button:
+                text:"Please click"
+                font_size:14
+                background_color:[0,0,0,0]
+                color:[1,1,0]
+
+    BoxLayout:
+        orientation:"horizontal"
+        height:40
+        cols:1
+        width:root.width/2
+        pos:root.width/4,root.height/20
+        Image:
+            source:'img/twitter_logo.png'
+            size_hint:.8,.8
+        Image:
+            source:'img/facebook_logo.png'
+            size_hint:.8,.8
+        Image:
+            source:'img/instagram_logo.png'
+            size_hint:.8,.8
+
